@@ -11,7 +11,7 @@ class InsuranceSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Insurance::class, 5)->create();
+        factory(\App\Insurance::class, 20)->create();
 
     }
 }

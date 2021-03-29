@@ -11,7 +11,7 @@ class ChildrenSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Children::class, 5)->create();
+        factory(\App\Children::class, 20)->create();
 
     }
 }

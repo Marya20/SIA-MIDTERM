@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Insurance extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['insurance'];
 
     public function employee(){
         return $this->belongsTo('App\Employee');
