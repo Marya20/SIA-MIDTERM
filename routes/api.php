@@ -13,10 +13,22 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::apiResource('employees', 'EmployeeController');
-Route::apiResource('insurances', 'InsuranceController');
-Route::apiResource('childrens', 'ChildrenController');
+Route::get('employees/', 'EmployeeController@index');
+Route::get('employees/{employee}', 'EmployeeController@show');
+Route::post('employees/', 'EmployeeController@store');
+Route::patch('employees/{employee}', 'EmployeeController@update');
+Route::delete('employees/{employee}', 'EmployeeController@destroy');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('insurances/', 'InsuranceController@index');
+Route::get('insurances/{insurance}', 'InsuranceController@show');
+Route::post('insurances/', 'InsuranceController@store');
+Route::patch('insurances/{insurance}', 'InsuranceController@update');
+Route::delete('insurances/{insurance}', 'InsuranceController@destroy');
+Route::get('insurances/{insurance}/employees/childrens', 'InsuranceController@Insurance');
+
+
+Route::get('childrens/', 'ChildrenController@index');
+Route::get('childrens/{children}', 'ChildrenController@show');
+Route::post('childrens/', 'ChildrenController@store');
+Route::patch('childrens/{children}', 'ChildrenController@update');
+Route::delete('childrens/{children}', 'ChildrenController@destroy');

@@ -23,7 +23,7 @@ class InsuranceController extends Controller
 
     public function show(Insurance $insurance)
     {
-        return Insurance::with('children')->where('insurances.id', $insurance->id)->get();
+       return Insurance::find($insurance);
     }
 
     public function update(Request $request, Insurance $insurance)
@@ -36,5 +36,11 @@ class InsuranceController extends Controller
     public function destroy(Insurance $insurance)
     {
         return Insurance::destroy($insurance->id);
+    }
+
+    public function Insurance(Insurance $insurance){
+
+        return Insurance::with('employee','children')->where('insurances.id', $insurance->id)->get();
+
     }
 }
