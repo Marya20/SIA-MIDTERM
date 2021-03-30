@@ -19,7 +19,7 @@ Route::post('employees/', 'EmployeeController@store');
 Route::patch('employees/{employee}', 'EmployeeController@update');
 Route::delete('employees/{employee}', 'EmployeeController@destroy');
 
-Route::get('insurances/', 'InsuranceController@index');
+Route::get('insurances/', 'InsuranceController@index');~
 Route::get('insurances/{insurance}', 'InsuranceController@show');
 Route::post('insurances/', 'InsuranceController@store');
 Route::patch('insurances/{insurance}', 'InsuranceController@update');
